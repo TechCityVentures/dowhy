@@ -28,10 +28,10 @@ class CausalIdentifier:
             self.logger.info("All common causes are observed. Causal effect can be identified.")
         else:
             self.logger.warning("There are unobserved common causes. Causal effect cannot be identified.")
-            cli.query_yes_no(
-                "WARN: Do you want to continue by ignoring these unobserved confounders?",
-                default=None
-            )
+#            cli.query_yes_no(
+#                "WARN: Do you want to continue by ignoring these unobserved confounders?",
+#                default=None
+#            )
         observed_common_causes = self._graph.filter_unobserved_variables(common_causes)
         observed_common_causes = list(observed_common_causes)
 
